@@ -1,0 +1,20 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install Cython
+      run: pip install cython
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build your Kivy app
+      run: |
+        # Add your build commands here
+        buildozer android debug
